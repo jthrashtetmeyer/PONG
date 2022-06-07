@@ -86,7 +86,21 @@ def main():
         
         ball_x_position += ball_x_vel
         ball_y_position += ball_y_vel
+
+        if right_score ==5:
+            pygame.display.update()
+            WIN.blit(right_wins_label, (180, HEIGHT/2))
+            pygame.display.update()
+            pygame.time.delay(5000)
+            break
         
+        if left_score == 5:
+            pygame.display.update()
+            WIN.blit(left_wins_label, (180, HEIGHT/2))
+            pygame.display.update()
+            pygame.time.delay(5000)
+            break
+
         if pygame.Rect.colliderect(ball, right_player):         
         
             ball_x_vel = 0
@@ -103,12 +117,7 @@ def main():
 
         if ball_x_position <= 0:
             right_score += 1
-            if right_score ==5:
-                pygame.display.update()
-                WIN.blit(right_wins_label, (180, HEIGHT/2))
-                pygame.display.update()
-                pygame.time.delay(5000)
-                break
+           
             
             if serve_counter % 2 == 0:
                 ball_x_vel = -5
@@ -123,12 +132,7 @@ def main():
                
         if ball_x_position >= WIDTH:
             left_score += 1
-            if left_score == 5:
-                pygame.display.update()
-                WIN.blit(left_wins_label, (180, HEIGHT/2))
-                pygame.display.update()
-                pygame.time.delay(5000)
-                break
+           
             
             if serve_counter % 2 == 0:
                 ball_x_vel = -5
