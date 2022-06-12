@@ -17,8 +17,6 @@ GREEN = (0, 255, 0)
 
 FPS = 60
 
-#random_up_or_down = random.randint(0, 1)
-
 def get_ball_x_vel(x):
     xv = random.randint(-5, -2)
     return xv
